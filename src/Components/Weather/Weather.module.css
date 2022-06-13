@@ -1,0 +1,59 @@
+.weather {
+	background: url(/src/assets/backgroundImage.jpg);
+	min-height: 100vh;
+	width: 100%;
+	background-position: center;
+	background-size: cover;
+	background-repeat: no-repeat;
+	object-fit: cover;
+	display: flex;
+	align-items: flex-start;
+	justify-content: flex-start;
+	position: relative;
+}
+.left {
+	flex: 0.6;
+	width: 100%;
+	min-height: 100vh;
+	padding: 2rem 5rem;
+	display: flex;
+	flex-direction: column;
+	align-items: flex-start;
+	justify-content: space-between;
+}
+.logo {
+	color: #fff;
+}
+.weatherDetails {
+	display: flex;
+	align-items: center;
+	justify-content: flex-start;
+}
+.weatherDetails h1 {
+	font-size: 12rem;
+	font-weight: 500;
+}
+.locationDetails {
+	margin: 0 1rem;
+}
+.locationDetails > h3 {
+	font-size: 4rem;
+	font-weight: 500;
+}
+.right {
+	flex: 0.4;
+	width: 100%;
+	min-height: 100vh;
+	background: rgb(0, 0, 0, 0.1);
+	backdrop-filter: blur(1rem);
+}
+.searchInputContainer {
+	background: red;
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+}
+.searchIcon {
+	background: #4f6764;
+	padding: 1rem 2rem;
+}
