@@ -2,7 +2,6 @@ import React, { useState } from "react";
 import { BiSearchAlt } from "react-icons/bi";
 import classes from "./Weather.module.css";
 import moment from "moment";
-import { BsFillCloudSlashFill } from "react-icons/bs";
 
 const Weather = () => {
 	const [data, setData] = useState("");
@@ -11,8 +10,10 @@ const Weather = () => {
 
 	const date = moment().format("MMMM Do YYYY, h:mm a");
 
+	const API_KEY = "10309a7dba2377244800232f238b67b8";
+
 	const fetchData = () => {
-		const URL = `https://api.openweathermap.org/data/2.5/weather?q=${location}&lat=35&lon=139&appid=10309a7dba2377244800232f238b67b8`;
+		const URL = `https://api.openweathermap.org/data/2.5/weather?q=${location}&lat=35&lon=139&appid=${API_KEY}`;
 
 		fetch(URL)
 			.then((response) => response.json())
