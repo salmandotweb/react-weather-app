@@ -11,6 +11,16 @@
 	justify-content: flex-start;
 	position: relative;
 }
+.weather::before {
+	content: "";
+	position: absolute;
+	top: 0;
+	left: 0;
+	height: 100%;
+	width: 100%;
+	background: rgba(0, 0, 0, 0.2);
+	z-index: 1;
+}
 .left {
 	flex: 0.6;
 	width: 100%;
@@ -20,6 +30,7 @@
 	flex-direction: column;
 	align-items: flex-start;
 	justify-content: space-between;
+	z-index: 99999;
 }
 .logo {
 	color: #fff;
@@ -40,20 +51,103 @@
 	font-size: 4rem;
 	font-weight: 500;
 }
+.weatherIcon {
+	margin-left: 2rem;
+}
 .right {
 	flex: 0.4;
 	width: 100%;
 	min-height: 100vh;
-	background: rgb(0, 0, 0, 0.1);
-	backdrop-filter: blur(1rem);
+	background: rgb(0, 0, 0, 0.15);
+	backdrop-filter: blur(1.5rem);
+	z-index: 999999;
 }
 .searchInputContainer {
-	background: red;
 	display: flex;
-	align-items: center;
+	align-items: flex-end;
 	justify-content: space-between;
+}
+.searchInput {
+	padding: 1rem 5rem 0 5rem;
+	width: 100%;
+}
+.searchInput > input {
+	border: none;
+	border-bottom: 0.1rem solid rgb(218, 218, 218);
+	font-family: inherit;
+	font-size: 1.5rem;
+	background: none;
+	color: #fff;
+	padding-bottom: 0.5rem;
+	width: 100%;
+}
+.error > input {
+	border-bottom: 0.1rem solid red;
+}
+.searchInput > input::placeholder {
+	color: #eee;
 }
 .searchIcon {
 	background: #4f6764;
-	padding: 1rem 2rem;
+	padding: 1.5rem 2.5rem;
+}
+.searchIcon > svg {
+	font-size: 2rem;
+}
+.weatherDetailsContainer {
+	padding: 5rem 5rem;
+}
+.weatherDetailsContainer > h4 {
+	font-weight: 500;
+}
+.details {
+	padding: 3rem 0;
+	border-bottom: 0.1rem solid #aaa;
+}
+.singleDetail {
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+	width: 100%;
+	margin: 1rem 0;
+}
+.singleDetail > p:first-child {
+	color: #eee;
+}
+@media screen and (max-width: 898px) {
+	.weather {
+		flex-direction: column-reverse;
+	}
+	.left {
+		min-height: 50vh;
+	}
+	.right {
+		min-height: 50vh;
+	}
+}
+@media screen and (max-width: 740px) {
+	.left {
+		align-items: center;
+		justify-content: center;
+		text-align: center;
+	}
+	.weatherDetails {
+		flex-direction: column;
+		align-items: center;
+		justify-content: center;
+		text-align: center;
+	}
+}
+@media screen and (max-width: 425px) {
+	.weatherDetails > h1 {
+		font-size: 8rem;
+	}
+}
+@media screen and (max-width: 405px) {
+	.weatherDetailsContainer {
+		padding: 3rem;
+	}
+	.searchInput {
+		padding: 0 3rem;
+	}
 }
